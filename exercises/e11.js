@@ -6,7 +6,19 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
+  let final = [];
+  for (let item in array){
+    if(array[item].withdrawals === undefined){
+      final.push(0)
+    } else {
+        let drawals = array[item].withdrawals;
+         final.push(drawals.reduce((total, elem)=>
+          elem > total ?
+          elem : elem + total
+        )); 
+      }
+    }
+    return final;
 }
 
 // === TEST YOURSELF ===

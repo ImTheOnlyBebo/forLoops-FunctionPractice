@@ -6,7 +6,10 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-
+  for (let item in array){
+		let sort = array.sort((a, b) => b.balance - a.balance);
+    return [sort[item]];
+}
 }
 
 

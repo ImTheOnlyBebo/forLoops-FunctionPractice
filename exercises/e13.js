@@ -9,7 +9,22 @@
 // Phil's Account Object
 // ]
 
-export function getAllAccountsWithSumsOfDepositsLess2000(array) {}
+export function getAllAccountsWithSumsOfDepositsLess2000(array) {
+  let myArr = [];
+  for (let i = 0; i < array.length; i++){
+    let sum = 0;
+    if (array[i].deposits === undefined){
+    }
+    for(let x in array[i].deposits){
+      sum += array[i].deposits[x];
+    }
+    console.log(sum);
+    if (sum < 2000){
+      myArr.push(array[i]);
+    }
+  }
+  return myArr;
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"
