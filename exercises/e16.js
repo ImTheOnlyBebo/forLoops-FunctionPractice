@@ -8,12 +8,12 @@
 export function flatArrays(array) {
   // Your code goes here...
   const result = [];
-  for (let item of array) {
-    if (Array.isArray(item)) {
-      result.push(...flatArrays(item));
-    } else {
-      result.push(item);
-    }
+  for (let elem of array){
+    if (typeof elem === "object"){
+      for (let innerElem of elem){
+        result.push(innerElem);
+      }
+    } else result.push(elem);
   }
   return result;
 }

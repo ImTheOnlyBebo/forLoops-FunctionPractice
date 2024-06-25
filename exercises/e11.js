@@ -11,11 +11,11 @@ export function getAllWithdrawals(array) {
     if(array[item].withdrawals === undefined){
       final.push(0)
     } else {
-        let drawals = array[item].withdrawals;
-         final.push(drawals.reduce((total, elem)=>
-          elem > total ?
-          elem : elem + total
-        )); 
+			let sum = 0;
+			for (let i = 0; i < array[item].withdrawals.length; i++) {
+				sum += array[item].withdrawals[i];
+			}
+			final.push(sum);
       }
     }
     return final;

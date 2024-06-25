@@ -4,9 +4,11 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-  const myArr = Array.from({ length: max }, (_, i) => i);
-	const result = myArr.filter(num => Math.sqrt(num) % 1 === 0);
-	return result;
+	let squares = [];
+	for (let i = 0; i * i < max; i++){
+		squares.push(i * i);
+	}
+return squares;
 }
 
 // === TEST YOURSELF ===

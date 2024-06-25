@@ -6,10 +6,21 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-  for (let item in array){
-		let sort = array.sort((a, b) => b.balance - a.balance);
-    return [sort[item]];
-}
+  let maxBalance = 0;
+  let client = undefined;
+  let found = false;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance > 0 && array[i].balance > maxBalance) {
+      maxBalance = array[i].balance;
+      client = [array[i]];
+      found = true;
+    }
+  }
+  if (found) {
+    return client;
+  } else {
+    return [];
+  }
 }
 
 

@@ -8,9 +8,11 @@ export function getClientsWithLetterInName(array, letter) {
   let myArr = [];
   for (let item in array) {
     let lower = array[item].name.toLowerCase();
-    if (lower.includes(letter)){
-      myArr.push(array[item].name);
-    }
+    for (let value in lower){
+			if (lower[value] === letter){
+				myArr.push(array[item].name);
+			}
+		}
   }
   return myArr;
 }

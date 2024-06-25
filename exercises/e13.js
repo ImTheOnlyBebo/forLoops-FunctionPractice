@@ -18,7 +18,6 @@ export function getAllAccountsWithSumsOfDepositsLess2000(array) {
     for(let x in array[i].deposits){
       sum += array[i].deposits[x];
     }
-    console.log(sum);
     if (sum < 2000){
       myArr.push(array[i]);
     }
